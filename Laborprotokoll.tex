@@ -1,0 +1,131 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman,main=ngerman]{babel}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{parskip}
+\usepackage{helvet}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{moresize}
+\usepackage{float}
+
+% biblatex + babel: recommended for proper quotation handling
+\usepackage{csquotes}
+
+% --- Bibliography (biblatex + biber) ---
+\usepackage[
+  backend=biber,
+  style=numeric,
+  sorting=nty
+]{biblatex}
+\addbibresource{refs.bib}
+
+% --- Settings ---
+\geometry{left=2cm,right=2cm,top=3cm,bottom=2.5cm,headsep=1.2cm}
+\renewcommand{\familydefault}{\sfdefault}
+\setlength{\headheight}{38.5pt}
+
+% --- Header and Footer ---
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Elias Pöschl}
+\chead{Systemtechnik – Windows Server}
+\rhead{\includegraphics[height=1.2cm]{./logo}}
+\lfoot{2025/26}
+\rfoot{\thepage}
+\renewcommand{\headrulewidth}{0.2pt}
+
+% --- Colors and Section Formatting ---
+\definecolor{htlorange}{RGB}{255,108,76}
+
+\titleformat{\section}
+  {\color{htlorange}\normalfont\Large\bfseries}
+  {\thesection}{1em}{}
+\titleformat{\subsection}
+  {\color{htlorange}\normalfont\large\bfseries}
+  {\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\color{htlorange}\normalfont\normalsize\bfseries}
+  {\thesubsubsection}{1em}{}
+
+% --- Load hyperref last ---
+\usepackage[hidelinks]{hyperref}
+
+\begin{document}
+
+\vspace*{2cm}
+
+\begin{center}
+{\HUGE\textbf{Laborprotokoll}}\\[1cm]
+{\LARGE Betriebssystemtechnik}\\[0.5cm]
+\end{center}
+\hrule height 1pt
+\vspace{0.5cm}
+{\Large\textbf{Windows Server}}\\[0.5cm]
+Aufsetzen und Konfigurieren eines Windows Servers 2025
+\vfill
+
+\begin{center}
+    \textbf{Verfasser:}\\[0.2cm]
+    {\LARGE Elias Pöschl}
+\end{center}
+\vspace{1cm}
+\begin{tabbing}
+\hspace{4cm} \= \kill
+\textbf{Jahrgang:} \> 3. Jahrgang \\
+\textbf{Klasse:} \> 3AHITS \\
+\textbf{Schuljahr:} \> 2025/26 \\
+\textbf{Datum:} \> \today \\
+\end{tabbing}
+\vspace{2cm}
+\begin{center}
+\includegraphics[height=3cm]{logo}
+\end{center}
+
+\vspace{1cm}
+
+\begin{tabbing}
+\hspace{4cm} \= \kill
+\textbf{Unterrichtsfach:} \> Systemtechnik \\
+\textbf{Schule:} \> HTBLuVA Salzburg \\
+\textbf{Abteilungen:} \> Informationstechnologie \\
+\textbf{Lehrer:} \> Maxim Benjamin, Prof. Ing. Dipl.-Ing. BSc.\\
+\end{tabbing}
+\vspace{1cm}
+
+\newpage
+\tableofcontents
+\newpage
+\listoffigures
+\listoftables
+\newpage
+
+    \section{Schutzmaßnahmen}\label{sec:schutzmassnahmen}
+    \input{src/schutzmaßnahmen}
+
+    \section{Serverinstallation}\label{sec:serverinstallation}
+    \input{src/serverinstallation}
+
+    \section{Arbeitsauftrag: Rollen und Features}\label{sec:arbeitsauftrag_rollen_features}
+    \input{src/arbeitsauftrag-rollen-features}
+    
+    \section{Arbeitsauftrag: IT-Infrastruktur in einem fiktiven Unternehmen}\label{sec:arbeitsauftrag_it_infrastruktur}
+    \input{src/arbeitsauftrag-it-infrastruktur}
+    
+    \section{Arbeitsauftrag: Benutzerverwaltung, Serverdienste und Dateizugriff}\label{sec:arbeitsauftrag:-benutzerverwaltung-serverdienste-und-dateizugriff}
+    \input{src/arbeitsauftrag-benutzerverwaltung}
+
+    \section{Arbeitsauftrag: Sicherheit, Dokumentation und Troubleshooting}\label{sec:arbeitsauftrag:-sicherheit-dokumentation-und-troubleshooting}
+    \input{src/arbeitsauftrag-sicherheit}
+
+    \section{Reflektion}\label{sec:reflektion}
+    \input{src/reflektion}
+
+\newpage
+\printbibliography[title={Literaturverzeichnis}]
+\end{document}
